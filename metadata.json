@@ -1,0 +1,5 @@
+{
+  "name": "AutoArchitect",
+  "description": "An AI-powered automation consultant that analyzes your manual workflows and generates architectural blueprints for automation.",
+  "requestFramePermissions": []
+}

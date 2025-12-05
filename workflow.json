@@ -1,0 +1,123 @@
+{
+    "nodes": [
+        {
+            "parameters": {
+                "httpMethod": "POST",
+                "path": "consultant",
+                "responseMode": "responseNode",
+                "options": {
+                    "allowedOrigins": "*"
+                }
+            },
+            "type": "n8n-nodes-base.webhook",
+            "typeVersion": 1,
+            "position": [
+                -240,
+                -32
+            ],
+            "id": "e3650676-f3b7-4057-8321-0102caf367c2",
+            "name": "Webhook Trigger",
+            "webhookId": "d8494bc6-b350-468a-a99b-0bce42f5afcc"
+        },
+        {
+            "parameters": {
+                "options": {}
+            },
+            "type": "@n8n/n8n-nodes-langchain.lmChatGoogleGemini",
+            "typeVersion": 1,
+            "position": [
+                -80,
+                176
+            ],
+            "id": "a38d9fab-79a6-40d1-b48c-78cec429fd79",
+            "name": "Google Gemini Chat Model",
+            "credentials": {
+                "googlePalmApi": {
+                    "id": "mq9sGbyFi5UTUjOC",
+                    "name": "Google Gemini(PaLM) Api account"
+                }
+            }
+        },
+        {
+            "parameters": {
+                "respondWith": "json",
+                "responseBody": "={{ $json.output }}",
+                "options": {
+                    "responseHeaders": {
+                        "entries": [
+                            {
+                                "name": "Access-Control-Allow-Origin",
+                                "value": "*"
+                            }
+                        ]
+                    }
+                }
+            },
+            "type": "n8n-nodes-base.respondToWebhook",
+            "typeVersion": 1,
+            "position": [
+                352,
+                -32
+            ],
+            "id": "0a67b4ab-4b38-4255-8f11-1f146bddbad7",
+            "name": "Respond to Webhook"
+        },
+        {
+            "parameters": {
+                "promptType": "define",
+                "text": "={{\n'CLIENT INTAKE FORM DATA:\\n' +\n'------------------------\\n' +\n'Industry: ' + $json.body.industry + '\\n' +\n'User Role: ' + $json.body.role + '\\n' +\n'Manual Process (The Problem): ' + $json.body.manual_task + '\\n' +\n'Current Tech Stack: ' + $json.body.tools + '\\n' +\n'Trigger Event: ' + $json.body.trigger + '\\n' +\n'Desired Outcome: ' + $json.body.goal + '\\n' +\n'------------------------\\n\\n' +\n'Based on this intake, design a complete automation architecture.'\n}}",
+                "hasOutputParser": true,
+                "options": {
+                    "systemMessage": "Role: Senior Automation Architect & n8n Solutions Expert.\n\n**Goal:**\nYou are a high-end consultant. A client has described a manual, painful business process. You must analyze their specific stack and architect a robust n8n workflow to solve it.\n\n**Consulting Rules:**\n1. **Analyze the Stack:** Look at the \"Current Tech Stack\". If they list generic names (e.g., \"Email\", \"Spreadsheet\"), you MUST pick the most standard specific tool (e.g., \"Gmail\", \"Google Sheets\") for the blueprint.\n2. **Fill the Gaps:** If they want to \"Send an SMS\" but didn't list an SMS tool, YOU must recommend one (e.g., \"Twilio\").\n3. **Be Technical:** The workflow steps must be logical. Start with the specific Trigger -> Process Data -> End with the Action.\n\n**Output Schema (Strict JSON):**\nYou must output ONLY JSON. Do not include markdown formatting. Use this exact structure:\n\n{{\n  \"industry\": \"Client's Industry\",\n  \"business_name\": \"A creative name for their business type\",\n  \"pain_point\": \"A summary of the manual bottleneck\",\n  \"solution_title\": \"Professional Name for the Automation\",\n  \"solution_description\": \"2-3 sentences explaining the value.\",\n  \"workflow_steps\": [\n    {{ \"step\": 1, \"tool\": \"Exact Tool Name (e.g. Typeform)\", \"action\": \"Specific technical action (e.g. Trigger on new submission)\" }},\n    {{ \"step\": 2, \"tool\": \"n8n\", \"action\": \"Format data structure\" }}\n  ],\n  \"saas_stack\": [\n    {{ \"name\": \"Tool Name\", \"role\": \"What it does in this flow\", \"type\": \"Native\" or \"HTTP\" }}\n  ]\n}}"
+                }
+            },
+            "type": "@n8n/n8n-nodes-langchain.agent",
+            "typeVersion": 3,
+            "position": [
+                0,
+                -32
+            ],
+            "id": "94cd129d-742b-4eea-b666-00aab19ff14d",
+            "name": "AI Agent"
+        }
+    ],
+    "connections": {
+        "Webhook Trigger": {
+            "main": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "Google Gemini Chat Model": {
+            "ai_languageModel": [
+                [
+                    {
+                        "node": "AI Agent",
+                        "type": "ai_languageModel",
+                        "index": 0
+                    }
+                ]
+            ]
+        },
+        "AI Agent": {
+            "main": [
+                [
+                    {
+                        "node": "Respond to Webhook",
+                        "type": "main",
+                        "index": 0
+                    }
+                ]
+            ]
+        }
+    },
+    "pinData": {},
+    "meta": {
+        "instanceId": "fadfcf828474d45b0e15301b158bfea877f7f899f37ef857e3268023d520aac5"
+    }
+}
